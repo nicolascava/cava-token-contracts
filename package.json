@@ -1,0 +1,26 @@
+{
+  "name": "cava-erc20-token",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapleinside/cava-erc20-token.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mapleinside/cava-erc20-token/issues"
+  },
+  "homepage": "https://github.com/mapleinside/cava-erc20-token#readme",
+  "dependencies": {
+    "zeppelin-solidity": "1.7.0"
+  }
+}
