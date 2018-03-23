@@ -4,7 +4,7 @@ interface tokenRecipient {
   function receiveApproval(address _from, uint256 _value, address _token, bytes _extraData) public;
 }
 
-contract TokenERC20 {
+contract CavaToken {
   // Public variables of the token.
 
   string public name;
@@ -31,7 +31,7 @@ contract TokenERC20 {
    *
    * Initializes contract with initial supply tokens to the creator of the contract.
    */
-  function TokenERC20(
+  function CavaToken(
     uint256 initialSupply,
     string tokenName,
     string tokenSymbol
