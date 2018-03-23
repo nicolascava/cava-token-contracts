@@ -6,18 +6,30 @@ module.exports = function (deployer) {
   // of closed days ((260 * 8) - 50).
   deployer.deploy(Token, 2870, 'Cava', 'CAVA', 18).then(function () {
     var openingTime = new Date().getTime() / 1000;
-    var endingTime = openingTime + 100000;
+
+    // Ending time: 1 hour after opening.
+    var endingTime = openingTime + 3600;
+
+    // Coinbase address.
     var fundsAddress = '0x627306090abab3a6e1400e9345bc60c78a8bef57';
-    var goal = 1666000000000000000000;
-    var rate = 1;
+
+    // Soft goal of 50 Ether.
+    var goal = 50000000000000000000;
+
+    // We give 2000000000000000 token by Wei (~1 USD).
+    var rate = 2000000000000000;
+
+    // Crowdsale hard cap of 100 Ether.
+    var cap = 100000000000000000000;
 
     // Arguments:
-    // - Minimum amount of funds to be raised (in weis).
+    // - Minimum amount of funds to be raised (in Wei).
     // - Crowdsale opening time (timestamp in seconds).
     // - Crowdsale closing time (timestamp in seconds).
-    // - Number of token units a buyer gets per wei.
+    // - Number of token units a buyer gets per Wei.
     // - Address where collected funds will be forwarded to.
     // - Address of the token being sold.
+    // - Crowdsale hard cap (in Wei).
     deployer.deploy(
       Crowdsale,
       goal,
@@ -25,7 +37,8 @@ module.exports = function (deployer) {
       endingTime,
       rate,
       fundsAddress,
-      Token.address
+      Token.address,
+      cap
     );
   });
 };
