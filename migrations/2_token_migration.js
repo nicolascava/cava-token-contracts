@@ -8,18 +8,18 @@ module.exports = function (deployer) {
     var openingTime = new Date().getTime() / 1000;
 
     // Ending time: 1 hour after opening.
-    var endingTime = openingTime + 3600;
+    var closingTime = openingTime + 3600;
 
     // Coinbase address.
     var fundsAddress = '0x627306090abab3a6e1400e9345bc60c78a8bef57';
 
-    // Soft goal of 50 Ether.
+    // Goal of 50 Ether.
     var goal = 50000000000000000000;
 
     // We give 2000000000000000 token by Wei (~1 USD).
     var rate = 2000000000000000;
 
-    // Crowdsale hard cap of 100 Ether.
+    // Crowdsale cap of 100 Ether.
     var cap = 100000000000000000000;
 
     // Arguments:
@@ -29,12 +29,12 @@ module.exports = function (deployer) {
     // - Number of token units a buyer gets per Wei.
     // - Address where collected funds will be forwarded to.
     // - Address of the token being sold.
-    // - Crowdsale hard cap (in Wei).
+    // - Crowdsale cap (in Wei).
     deployer.deploy(
       Crowdsale,
       goal,
       openingTime,
-      endingTime,
+      closingTime,
       rate,
       fundsAddress,
       Token.address,
