@@ -4,7 +4,7 @@ var Crowdsale = artifacts.require('./CavaTokenCrowdsale.sol');
 module.exports = function (deployer) {
   // Initial supply of 2030 because of 260 working days at a rate of 8 hours of work minus 50 days
   // of closed days ((260 * 8) - 50).
-  deployer.deploy(Token, 2870, 'Cava', 'CAVA', 18).then(function () {
+  deployer.deploy(Token, 2870, 'Cava', 'CAVA', 18).then(() => {
     var openingTime = new Date().getTime() / 1000;
 
     // Ending time: 1 hour after opening.
