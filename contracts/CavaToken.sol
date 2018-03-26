@@ -13,6 +13,10 @@ contract CavaToken is DetailedERC20, BurnableToken, StandardToken {
   )
   public
   DetailedERC20(_name, _symbol, _decimals) {
+    // TODO: check if `_name`, `_symbol`, and `_decimals` are valid.
+
+    require(_initialSupply > 0);
+
     totalSupply_ = _initialSupply * 10 ** uint256(_decimals);
     balances[msg.sender] = totalSupply_;
   }
