@@ -4,6 +4,7 @@ import 'zeppelin-solidity/contracts/token/ERC20/BurnableToken.sol';
 import 'zeppelin-solidity/contracts/token/ERC20/StandardToken.sol';
 import 'zeppelin-solidity/contracts/token/ERC20/DetailedERC20.sol';
 
+// TODO: add `burnFrom` method.
 contract CavaToken is DetailedERC20, BurnableToken, StandardToken {
   function CavaToken(
     uint256 _initialSupply,

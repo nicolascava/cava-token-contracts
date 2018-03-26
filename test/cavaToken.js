@@ -1,20 +1,6 @@
+const expectThrow = require('../lib/expectThrow');
+
 const Token = artifacts.require('./CavaToken.sol');
-
-async function expectThrow(promise) {
-  try {
-    await promise;
-  } catch (error) {
-    const invalidOpcode = error.message.search('invalid opcode') >= 0;
-    const outOfGas = error.message.search('out of gas') >= 0;
-    const revert = error.message.search('revert') >= 0;
-
-    assert(invalidOpcode || outOfGas || revert, 'Expected throw, got \'' + error + '\' instead');
-
-    return;
-  }
-
-  assert.fail('Expected throw not received');
-}
 
 async function deploy(initialSupply = 2870, name = 'Cava', symbol = 'CAVA', decimals = 18) {
   return await Token.new(initialSupply, name, symbol, decimals);
