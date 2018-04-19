@@ -4,7 +4,7 @@
 
 ## Summary
 
-Experimentation on a [Ethereum](https://www.ethereum.org) ERC20 token. This codebase own the smart contracts that define the Cava ERC20 token in the Ethereum blockchain.
+Experimentation on a [Ethereum](https://www.ethereum.org) ERC20 token. This codebase owns the smart contracts that define the Cava ERC20 token in the Ethereum blockchain.
 
 Smart contracts handle the token definition and the crowdsale definition. The entire project is built on the [Truffle](http://truffleframework.com) framework, necessary to test, compile, and deploy smart contracts with ease. With Truffle, smart contracts deployment are done like database migrations in a traditional deployment flow.
 
