@@ -1,25 +1,11 @@
 {
-  "name": "cava-erc20-token",
+  "name": "cava-token-contracts",
   "version": "1.0.0",
-  "description": "",
-  "main": "truffle-config.js",
-  "directories": {
-    "test": "test"
-  },
+  "private": true,
+  "description": "Ethereum smart contracts for the Cava ERC20 token",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "truffle test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mapleinside/cava-erc20-token.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mapleinside/cava-erc20-token/issues"
-  },
-  "homepage": "https://github.com/mapleinside/cava-erc20-token#readme",
   "dependencies": {
     "zeppelin-solidity": "1.7.0"
   }
